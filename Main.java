@@ -87,7 +87,7 @@ public class Main
     {
         try                     // Achtung: muss immer in try-Block stehen
         {
-            //Connection Connex = DriverManager.getConnection("jdbc:postgresql:Comedies", "postgres", "blubb");
+            Connection Connex = DriverManager.getConnection("jdbc:postgresql:Comedies", "postgres", "blubb");
             Statement Stmt = Connex.createStatement();
             int Result;         // Wird hier nicht ausgewertet
 
