@@ -4,24 +4,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-// Learning by Doing it Yourself (LBDIY):
-// * Hier nur Grundlagen/Einstieg in RDBMS und JDBC (kein SQL-Lehrgang!)
-// * Zum Üben eigene Beispiel-Datenbanken für eigene Zweck anlegen
-// * Vorausgesetzt: Kenntnisse der Mengenlehre und Mengenoperationen
-
-// Zum Nachlesen der Terminologie (s. auch dt./engl. Artikel):
-// * https://en.wikipedia.org/wiki/Relational_database
-// * https://en.wikipedia.org/wiki/Database#Database_management_system
-// * https://www.datenbanken-verstehen.de/datenbank-grundlagen/datenbank/
-
-// Hinweise:
-// * PostgreSQL ist ein eigenständiges, von Java völlig unabhängiges System
-//   (eigenständig installiert, kann auch aus sich heraus genutzt werden)
-// * Java bietet via JDBC-Treiber/Interface eine Schnittstelle zu PostgreSQL
-//   (so wie auch andere Programmiersprachen)
-// * Der Zugriff via JDBC ist relativ 'low-level', abstrakteren Zugriff bietet
-//   OpenSource-Software wie Hibernate (https://hibernate.org/) oder das Spring-
-//   Framework (https://spring.io/projects/spring-framework)
 
 public class Main
 {
@@ -91,6 +73,16 @@ public class Main
     //          Show: [Name | Country | Year | Language]
     //          Language (der Show) wäre von Country abhängig, das selbst
     //          Schlüssel einer eigenen Tabelle [Country | Language] sein könnte
+
+    /*
+    Erste Normalform, Attribute einer Tabelle sind atmonar, es sollte keine wiederholten
+        Gruppen geben.
+    Zweite Normalform, wenn die in 1NF sind und jedes nicht Schlüsselelement voll funktional
+        von jedem Kandidatenschlüssel abhängt. D.h. abhängigkeiten gibt es nur zum PS
+    Dritte Normalform, wenn sie in 2NF ist und die Werte transitiv sind. D.h. Sie Nicht-Schlüssel
+        Werte sollten nicht abhängig von Nicht-Schlüssel-Wertten sein. Country-Language is falsch
+     */
+
     static void StructDB()
     {
         try                     // Achtung: muss immer in try-Block stehen
